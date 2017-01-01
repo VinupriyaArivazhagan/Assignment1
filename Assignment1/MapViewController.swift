@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  Assignment1
 //
-//  Created by Vinupriya on 1/1/17.
+//  Created by Vinupriya on 30/12/16.
 //  Copyright © 2017 Vinupriya. All rights reserved.
 //
 
@@ -10,10 +10,29 @@ import UIKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: GMSMapView!
+    var store: Store!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let store = store,
+            let latitude = store.latitude,
+            let longitude = store.longitude,
+            let name = store.name,
+            let fullAddress = store.fullAddress {
+            
+            self.title = name
+            
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue))
+            marker.icon = UIImage(named: "pin")
+            marker.map = mapView
+            marker.title = fullAddress
+            
+            mapView.animateToLocation(CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue))
+            self.view.makeToast("Tap on map pin to see address")
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

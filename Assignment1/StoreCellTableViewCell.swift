@@ -1,14 +1,14 @@
 //
-//  storeCellTableViewCell.swift
+//  StoreCellTableViewCell.swift
 //  Assignment1
 //
-//  Created by Vinupriya on 1/1/17.
+//  Created by Vinupriya on 30/12/16.
 //  Copyright © 2017 Vinupriya. All rights reserved.
 //
 
 import UIKit
 
-class storeCellTableViewCell: UITableViewCell {
+class StoreCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
