@@ -1,3 +1,6 @@
 # Assignment1
+Open Assignment1.workspace.
+
 Kindly install pod before run
-`pod install` in terminal
+
+To install pod `pod install` in terminal
